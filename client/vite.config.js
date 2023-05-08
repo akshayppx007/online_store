@@ -9,11 +9,12 @@ export default defineConfig({
     cors: true,
     proxy: {
         "/api/": {
-            target: "http://localhost:9000",
+            target: "https://e-shop-3vmo.onrender.com",
             changeOrigin: true,
+            ws: true,
         },
         "/socket.io/": {
-            target: "http://localhost:9000",
+            target: "https://e-shop-3vmo.onrender.com",
             changeOrigin: true,
             ws: true,
         },
