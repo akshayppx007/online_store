@@ -74,7 +74,7 @@ io.on("connection", (socket) => {
 });
 
 // config
-dotenv.config();
+// dotenv.config();
 
 // database
 connectDatabase();
