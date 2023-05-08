@@ -94,29 +94,29 @@ function Header() {
 		}
 	  }, [isAuthenticated, user]);
 	  
-	  useEffect(() => {
-		if (user && user.isAdmin) {
-		  var audio = new Audio("/audio/chat.mp3");
-		  const socket = socketIOClient();
-		  socket.emit(
-			"admin connected with server",
-			"Admin" + Math.floor(Math.random() * 1000000000000)
-		  );
-		  socket.on(
-			"server sends message from client to admin",
-			({ user, message }) => {
-			  dispatch(setSocket(socket));
-			  dispatch(setChatRooms(user, message));
-			  dispatch(setMessageReceived(true));
-			  audio.play();
-			}
-		  );
-		  socket.on("disconnected", ({ reason, socketId }) => {
-			dispatch(removeChatRoom(socketId));
-		  });
-		  return () => socket.disconnect();
-		}
-	  }, [user && user.isAdmin]);
+	//   useEffect(() => {
+	// 	if (user && user.isAdmin) {
+	// 	  var audio = new Audio("/audio/chat.mp3");
+	// 	  const socket = socketIOClient();
+	// 	  socket.emit(
+	// 		"admin connected with server",
+	// 		"Admin" + Math.floor(Math.random() * 1000000000000)
+	// 	  );
+	// 	  socket.on(
+	// 		"server sends message from client to admin",
+	// 		({ user, message }) => {
+	// 		  dispatch(setSocket(socket));
+	// 		  dispatch(setChatRooms(user, message));
+	// 		  dispatch(setMessageReceived(true));
+	// 		  audio.play();
+	// 		}
+	// 	  );
+	// 	  socket.on("disconnected", ({ reason, socketId }) => {
+	// 		dispatch(removeChatRoom(socketId));
+	// 	  });
+	// 	  return () => socket.disconnect();
+	// 	}
+	//   }, [user && user.isAdmin]);
 
 	return (
 		<>
@@ -226,3 +226,5 @@ function Header() {
 }
 
 export default Header;
+
+

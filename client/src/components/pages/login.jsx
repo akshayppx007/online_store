@@ -14,6 +14,7 @@ import { clearErrors, loginUsers } from "../../actions/userActions";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import MetaTitle from "../layouts/metaTitle";
 
 function Login() {
 	const [validated, setValidated] = useState(false);
@@ -62,6 +63,7 @@ function Login() {
 
 	return (
 		<>
+		<MetaTitle title="Login" />
 			<Container>
 				<Row className="mt-5 justify-content-md-center">
 					<Col md={6}>

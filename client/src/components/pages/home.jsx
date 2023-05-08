@@ -5,6 +5,7 @@ import { Container, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getCategories } from "../../actions/categoryActions";
 import Loader from "../layouts/loader";
+import MetaTitle from "../layouts/metaTitle";
 
 
 function Home() {
@@ -17,6 +18,7 @@ function Home() {
     }, [dispatch]);
 
     return <>
+    <MetaTitle />
     { loading ? <Loader /> :  
     <>
      <ProductCarousel />
